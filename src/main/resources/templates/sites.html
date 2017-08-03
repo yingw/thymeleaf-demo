@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorator="layout">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"/>
+    <script></script>
+    <title>网站</title>
+</head>
+<body layout:fragment="content">
+<table border="1">
+    <thead>
+    <tr>
+        <td>网站名称</td>
+        <td>网址</td>
+        <td>created</td>
+    </tr>
+    </thead>
+    <tbody th:remove="all-but-first">
+
+    <tr th:each="site: ${sites}">
+        <!--/*@thymesVar id="site" type="cn.yinguowei.thymeleaf.WebSite"*/-->
+        <td th:text="${site.name}">网易</td>
+        <td th:text="${site.url}">http://www.163.com</td>
+        <td th:text="${site.created}">1999-01</td>
+    </tr>
+    <tr>
+        <td>苹果</td>
+        <td>http://www.apple.com</td>
+        <td>1999-01</td>
+    </tr>
+    <tr>
+        <td>CNBETA.com</td>
+        <td>http://www.cnbeta.com</td>
+        <td>1999-01</td>
+    </tr>
+    </tbody>
+</table>
+<input type="text" value="丰益">
+<input type="text" value="丰益">
+<input type="submit" value="提交">
+</body>
+</html>
